@@ -21,9 +21,9 @@ class SampleQueryService(
                 BookDto::class.java,
                 book.id,
                 book.author,
-                book.author,
+                book.title,
             )
-        ).from(book).fetchOne()
+        ).from(book).where(book.id.eq(id)).fetchOne()
         println(result) // 簡易ログ
         return result
     }
