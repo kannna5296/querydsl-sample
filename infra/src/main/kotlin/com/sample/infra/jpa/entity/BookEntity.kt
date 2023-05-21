@@ -8,12 +8,12 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "book")
-class BookJpaEntity(
+class BookEntity(
     @Id
     var id: String? = null,
     val title: String? = null,
     val author: String? = null,
     val releaseDate: LocalDateTime? = null,
     @OneToMany
-    val rentals: Set<RentalJpaEntity>? = null,
+    val rentals: Set<RentalEntity>? = null,
 )

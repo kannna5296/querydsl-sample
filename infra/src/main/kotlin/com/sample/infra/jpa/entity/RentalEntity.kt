@@ -7,7 +7,7 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "rental")
-class RentalJpaEntity(
+class RentalEntity(
     @Id
     var id: String? = null,
     val userId: Int? = null,
