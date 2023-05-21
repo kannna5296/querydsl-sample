@@ -1,6 +1,7 @@
 plugins {
     kotlin("kapt") //kotlin用アノテーションプロセッサ(annotationからクラス自動生成したりする)
     //入れてビルドするとbuild/generated/フォルダが映える
+    //dependencies内でkaptするのに必須
 }
 
 apply(plugin = "kotlin-kapt") //QEntity生成に必須
