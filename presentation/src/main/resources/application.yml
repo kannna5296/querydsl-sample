@@ -6,3 +6,6 @@ spring:
   h2:
     console:
       enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none #[@Entityクラスから自動でテーブル作る]デフォルト挙動をオフ
