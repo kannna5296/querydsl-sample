@@ -3,13 +3,7 @@ plugins {
     //入れてビルドするとbuild/generated/フォルダが映える
 }
 
-apply(plugin = "kotlin-kapt")
-apply(plugin = "org.jetbrains.kotlin.plugin.spring")
-
-allOpen {
-    annotation("javax.persistence.Entity")
-    annotation("javax.persistence.Table")
-}
+apply(plugin = "kotlin-kapt") //QEntity生成に必須
 
 dependencies {
     implementation("com.h2database:h2:1.3.148")
