@@ -2,14 +2,14 @@ package com.sample.usecase.query
 
 import java.time.LocalDateTime
 
-class BookWithRentalDto(
+data class BookWithRentalDto(
     val id: String,
     val title: String,
     val author: String,
-    val rentals: List<Rental>
+    val rentals: List<RentalDto>
 )
 
-class Rental(
-    val userId: String,
+data class RentalDto(
+    val userId: Int,
     val rentalDate: LocalDateTime,
 )

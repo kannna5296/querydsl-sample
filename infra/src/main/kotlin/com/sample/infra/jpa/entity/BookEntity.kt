@@ -3,6 +3,7 @@ package com.sample.infra.jpa.entity
 import java.time.LocalDateTime
 import javax.persistence.Entity
 import javax.persistence.Id
+import javax.persistence.JoinColumn
 import javax.persistence.OneToMany
 import javax.persistence.Table
 
@@ -15,5 +16,6 @@ class BookEntity(
     val author: String? = null,
     val releaseDate: LocalDateTime? = null,
     @OneToMany
+    @JoinColumn(name="book_id")
     val rentals: Set<RentalEntity>? = null,
 )

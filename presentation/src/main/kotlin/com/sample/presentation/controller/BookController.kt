@@ -1,6 +1,7 @@
 package com.sample.presentation.controller
 
 import com.sample.usecase.request.SampleForm
+import com.sample.usecase.response.BookDetailResponse
 import com.sample.usecase.response.BookResponse
 import com.sample.usecase.response.SampleResponse
 import com.sample.usecase.service.SampleService
@@ -22,9 +23,16 @@ class BookController(
     }
 
     @GetMapping("/book/{id}")
-    fun create(@PathVariable id: String): ResponseEntity<BookResponse> {
+    fun index(@PathVariable id: String): ResponseEntity<BookResponse> {
         val result = sampleService.findById(id)
         val response = BookResponse(result)
+        return ResponseEntity.ok(response)
+    }
+
+    @GetMapping("/book/{id}/detail")
+    fun indexDetail(@PathVariable id: String): ResponseEntity<BookDetailResponse> {
+        val result = sampleService.findDetailById(id)
+        val response = BookDetailResponse(result)
         return ResponseEntity.ok(response)
     }
 }
