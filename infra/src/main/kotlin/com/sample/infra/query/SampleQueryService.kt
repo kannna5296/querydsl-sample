@@ -38,19 +38,23 @@ class SampleQueryService(
             .from(book)
             .leftJoin(book.rentals, rental)
             .where(book.id.eq(id))
-            .transform(groupBy(book.id).`as`(
-                Projections.constructor(
-                    BookWithRentalDto::class.java,
-                    book.id,
-                    book.title,
-                    book.author,
-                    list(Projections.constructor(
-                        RentalDto::class.java,
-                        rental.userId,
-                        rental.rentalDate
-                    ))
+            .transform(
+                groupBy(book.id).`as`(
+                    Projections.constructor(
+                        BookWithRentalDto::class.java,
+                        book.id,
+                        book.title,
+                        book.author,
+                        list(
+                            Projections.constructor(
+                                RentalDto::class.java,
+                                rental.userId,
+                                rental.rentalDate
+                            )
+                        )
+                    )
                 )
-            ))
+            )
         val bookWithRental = result[id]
         println(bookWithRental) // 簡易ログ
         return bookWithRental

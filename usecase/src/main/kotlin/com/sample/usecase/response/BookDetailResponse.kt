@@ -1,6 +1,5 @@
 package com.sample.usecase.response
 
-import com.sample.usecase.query.BookDto
 import com.sample.usecase.query.BookWithRentalDto
 import java.time.LocalDateTime
 
@@ -15,7 +14,7 @@ class BookDetailResponse(
         title = bookDetailDto.title,
         author = bookDetailDto.author,
         rentals = bookDetailDto.rentals.map {
-            RentalResponse(it.userId,it.rentalDate)
+            RentalResponse(it.userId, it.rentalDate)
         }
     )
 }

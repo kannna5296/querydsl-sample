@@ -16,6 +16,6 @@ class BookEntity(
     val author: String? = null,
     val releaseDate: LocalDateTime? = null,
     @OneToMany
-    @JoinColumn(name="book_id")
+    @JoinColumn(name = "book_id")
     val rentals: Set<RentalEntity>? = null,
 )
