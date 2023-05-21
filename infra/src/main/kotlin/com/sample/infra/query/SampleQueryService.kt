@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class SampleQueryService(
-    private val queryFactory: JPAQueryFactory // TODO こいつの設定
+    private val queryFactory: JPAQueryFactory
 ) : ISampleQueryService {
     private val book = QBookEntity.bookEntity // build/generated/source/kapt/main/.../infra.jpa.entityに自動生成される
     private val rental = QRentalEntity.rentalEntity // build/generated/source/kapt/main/.../infra.jpa.entityに自動生成される
